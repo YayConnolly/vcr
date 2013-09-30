@@ -22,7 +22,7 @@ module VCR
         # @return [String] the cassette content
         def [](file_name)
           path = absolute_path_to_file(file_name)
-          return nil unless File.exist?(path)
+          return nil unless File.exist?(path.to_s)
           File.read(path)
         end
 
